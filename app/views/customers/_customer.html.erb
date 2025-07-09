@@ -1,15 +1,13 @@
 <div class="box">
   <article class="media">
     <figure class="media-left">
+      <div class="customer-card">
       <% if customer.image.attached? %>
-        <p class="image is-64x64">
-          <%= image_tag customer.image.variant(resize_to_limit: [64, 64]), alt: customer.full_name %>
-        </p>
-      <% else %>
-        <p class="image is-64x64">
-          <%= image_tag 'placeholder.png', alt: 'No image' %>
-        </p>
-      <% end %>
+  <%= image_tag customer.image, alt: customer.full_name, class: "customer-image" %>
+<% else %>
+  <%= image_tag 'placeholder.png', alt: 'No image', class: "customer-image" %>
+<% end %>
+
     </figure>
     <div class="media-content">
       <div class="content">
